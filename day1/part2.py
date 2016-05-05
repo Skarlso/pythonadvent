@@ -1,7 +1,7 @@
 from functools import reduce
 
 with open('input.txt', 'r') as f:
-    data=f.read().replace('\n', '')
+    data = f.read().replace('\n', '')
 
 location = 1
 index = 0
