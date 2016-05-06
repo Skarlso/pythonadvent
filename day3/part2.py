@@ -9,30 +9,25 @@ counter = 0
 
 for ch in data:
     robot = False if counter & 1 == 0 else True
-    if ch == '^':
-        if robot:
-            y += 1
-        else:
-            ry += 1
-    elif ch == '<':
-        if robot:
-            x -= 1
-        else:
-            rx -= 1
-    elif ch == '>':
-        if robot:
-            x += 1
-        else:
-            rx += 1
-    elif ch == 'v':
-        if robot:
-            y -= 1
-        else:
-            ry -= 1
-
     if robot:
+        if ch == '^':
+            y += 1
+        elif ch == '<':
+            x -= 1
+        elif ch == '>':
+            x += 1
+        elif ch == 'v':
+            y -= 1
         dictionary[(x, y)] = True
     else:
+        if ch == '^':
+            ry += 1
+        elif ch == '<':
+            rx -= 1
+        elif ch == '>':
+            rx += 1
+        elif ch == 'v':
+            ry -= 1
         dictionary[(rx, ry)] = True
     counter += 1
 
