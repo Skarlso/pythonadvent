@@ -22,7 +22,8 @@ for line in data:
                 if split[1] == "on":
                     grid[i][j] += 1
                 else:
-                    grid[i][j] -= 1
+                    if grid[i][j] > 0:
+                        grid[i][j] -= 1
             elif split[0] == "toggle":
                 grid[i][j] += 2
 
